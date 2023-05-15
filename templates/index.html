@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900">
+    <div id="wrapper" class="w-3/4 my-0 mx-auto">
+        <h1 class="text-center text-4xl my-8 font-bold text-gray-100">Counter</h1>
+        <p class="text-center my-2 bold text-xl text-gray-100">{{session['count']}}</p>
+        <div class="w-full flex justify-center mt-8">
+            <form action='/add2' method='post'>
+                <button class="text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br shadow-lg shadow-red-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-4 mb-2">Add 2</button>
+            </form>
+            <form action='/reset' method='post'>
+
+                <button class="text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br shadow-lg shadow-yellow-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-4 mb-2">Reset</button>
+            </form>
+        </div>
+        <div id="increment_form" class=" flex flex-col items-center mt-8">
+            <p class="text-gray-100 mb-2">How much would you like to increment by?</p>
+            <form action="/increment_by" method="post">
+                <label for="increment" class="text-gray-100 font-bold">Increment By:  </label>
+                <input type="number" name="increment" class="bg-gray-50 border border-gray-300 text-gray-500 text-sm rounded-lg ml-2 p-1" placeholder="5">
+            </form>
+        </div>
+        <p class="text-gray-100 mt-10 text-center italic">total visits: {{session['visits']}}</p>
+    </div>
+</body>
+</html>
